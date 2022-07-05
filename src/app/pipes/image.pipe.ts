@@ -11,7 +11,7 @@ export class ImagePipe implements PipeTransform {
 
   transform(value: string, size: string = 'w500'): string {
     if( !value ) {
-      return;
+      return './assets/example-image.jpeg';
     }
     const pathImage = `${path}/${size}${value}`;
 
