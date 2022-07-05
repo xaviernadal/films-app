@@ -11,15 +11,21 @@ import { Movie } from '../interfaces/interfaces';
 export class Tab1Page implements OnInit {
 
   private recentMovies: Movie[] = [];
-  
-  constructor(private moviesService: MoviesService) {}
+  private popularMovies: Movie[] = [];
+  private recommendedMovies: Movie[] = [];
+  constructor(private moviesService: MoviesService) { }
 
   ngOnInit() {
     this.moviesService.getFeature().subscribe((data) => {
-      this.recentMovies = data.results;
-      console.log(this.recentMovies);
+      this.popularMovies = data.results;
     }
     );
+    this.moviesService.getLatest().subscribe((data) => {
+      this.recentMovies = data.results;
+    });
+    this.moviesService.getRecommended().subscribe((data) => {
+      this.recommendedMovies = data.results;
+    });
   }
 
 }
