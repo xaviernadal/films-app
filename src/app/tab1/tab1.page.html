@@ -1,11 +1,16 @@
 <ion-content [fullscreen]="true">
-
-  <ion-slides [options]="slideOpts">
-    <ion-slide  *ngFor="let movie of recentMovies">
-      <ion-card>
-        <img [src]="movie.backdrop_path | image ">
-      </ion-card>
-    </ion-slide>
-  </ion-slides>
-
+<ion-grid fixed>
+    <ion-row>
+       
+        <ion-col><h3>Recommended</h3></ion-col>
+    </ion-row>
+</ion-grid>
+<app-slideshow-backdrop [movies]="recentMovies"></app-slideshow-backdrop>
+<ion-grid fixed>
+    <ion-row>
+       
+        <ion-col><h3>Latest</h3></ion-col>
+    </ion-row>
+</ion-grid>
+<app-slideshow-poster [movies]="recentMovies"></app-slideshow-poster>
 </ion-content>

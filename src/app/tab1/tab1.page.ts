@@ -11,11 +11,7 @@ import { Movie } from '../interfaces/interfaces';
 export class Tab1Page implements OnInit {
 
   private recentMovies: Movie[] = [];
-  slideOpts = {
-    slidesPerView: 1.1,
-    spaceBetween: -10,
-    centeredSlides: true
-  }
+  
   constructor(private moviesService: MoviesService) {}
 
   ngOnInit() {
